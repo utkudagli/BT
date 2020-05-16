@@ -1,7 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "GameFramework/Actor.h"
+#include "Engine/World.h"
 #include "BTAIController.h"
 
 void ABTAIController::BeginPlay() {
@@ -26,4 +25,11 @@ ATank* ABTAIController::GetPlayerTank() const {
 		return nullptr;
 	}
 	return Cast<ATank>(PlayerPawn);
+}
+
+void ABTAIController::Tick(float DeltaTime) {
+	Super::Tick(DeltaTime);
+	if (GetPlayerTank()) {
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+	}
 }
