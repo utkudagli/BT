@@ -2,6 +2,7 @@
 
 
 #include "Engine/World.h"
+#include "Tank.h"
 #include "BTPlayerControllerC.h"
 
 void ABTPlayerControllerC::BeginPlay() {
