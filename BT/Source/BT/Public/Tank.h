@@ -10,6 +10,7 @@
 
 
 class UTankBarrel;
+class UTankTurret;
 class UTankAimingComponent;
 
 UCLASS()
@@ -22,6 +23,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelRefference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretRefference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category= Firing)
+	void Fire();
 
 private:
 	// Sets default values for this pawn's properties
@@ -40,5 +47,5 @@ private:
 
 
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 100000;
+	float LaunchSpeed = 7000;
 };

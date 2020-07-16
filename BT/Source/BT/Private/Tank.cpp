@@ -2,6 +2,7 @@
 
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "TankTurret.h"
 #include "Tank.h"
 
 // Sets default values
@@ -35,4 +36,13 @@ void ATank::AimAt(FVector HitLocation) {
 
 void ATank::SetBarrelRefference(UTankBarrel* BarrelToSet) {
 	TankAimingComponent->SetBarrelRefference(BarrelToSet);
+}
+
+void ATank::SetTurretRefference(UTankTurret* TurretToSet) {
+	TankAimingComponent->SetTurretRefference(TurretToSet);
+}
+
+void ATank::Fire() {
+	auto Time = GetWorld()->GetTimeSeconds();
+	UE_LOG(LogTemp, Warning, TEXT("%f: Tank Fires"), Time);
 }
