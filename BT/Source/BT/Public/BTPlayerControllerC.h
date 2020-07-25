@@ -38,6 +38,6 @@ private:
 	float CrosshairYLocation = 0.3333;
 
 	UPROPERTY(EditDefaultsOnly)
-	float LineTraceRange = 100000000000;
+	float LineTraceRange = 1000000;
 };
 
